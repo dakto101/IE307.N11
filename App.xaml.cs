@@ -1,8 +1,4 @@
-﻿using IE307.N11.Services;
-using IE307.N11.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace IE307.N11
 {
@@ -12,9 +8,8 @@ namespace IE307.N11
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
+            Services.ItemDataStore.Init();
         }
 
         protected override void OnStart()

@@ -1,8 +1,6 @@
-﻿using IE307.N11.ViewModels;
-using IE307.N11.Views;
+﻿using IE307.N11.Services;
 using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace IE307.N11
 {
@@ -11,13 +9,11 @@ namespace IE307.N11
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 
-        private async void OnMenuItemClicked(object sender, EventArgs e)
+        private void MenuItem_About_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//LoginPage");
+            Browser.OpenAsync("https://aka.ms/xamarin-quickstart");
         }
     }
 }
