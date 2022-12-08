@@ -1,2 +1,3 @@
-bin
-obj
+# File bin và obj
+bin/
+obj/
