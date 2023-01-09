@@ -6,11 +6,45 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.31" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\LoginPage_ResetPassword_Verify.xaml.cs">
+      <DependentUpon>LoginPage_ResetPassword_Verify.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoginPage_ResetPassword.xaml.cs">
+      <DependentUpon>LoginPage_ResetPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoginPage_SignUp.xaml.cs">
+      <DependentUpon>LoginPage_SignUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoginPage_Logout.xaml.cs">
+      <DependentUpon>LoginPage_Logout.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsPage_Advanced.xaml.cs">
+      <DependentUpon>SettingsPage_Advanced.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsPage_Gestures.xaml.cs">
+      <DependentUpon>SettingsPage_Gestures.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsPage_Appearance.xaml.cs">
+      <DependentUpon>SettingsPage_Appearance.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsPage_Reviewing.xaml.cs">
+      <DependentUpon>SettingsPage_Reviewing.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsPage_AnkiDroid.xaml.cs">
+      <DependentUpon>SettingsPage_AnkiDroid.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DecksPage.xaml.cs">
       <DependentUpon>DecksPage.xaml</DependentUpon>
     </Compile>

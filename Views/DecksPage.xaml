@@ -1,12 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IE307.N11.Views.DecksPage">
+             xmlns:vm="clr-namespace:IE307.N11.ViewModels"
+             x:Class="IE307.N11.Views.DecksPage"
+             Title="Decks">
+
+    <ContentPage.BindingContext>
+        <vm:DecksViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Toolbar_Sync" Command="{Binding Cmd_Sync}"/>
+        <ToolbarItem IconImageSource="Toolbar_Menu"/>
+    </ContentPage.ToolbarItems>
+    <!-- Custom lại Toolbar nếu cần
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="a"/>
+            <ImageButton Source="Toolbar_Sync.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="End" BackgroundColor="{StaticResource Primary}"/>
+        </StackLayout>
+    </Shell.TitleView>
+    -->
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding Items}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="0">
+                                <Label Text="{Binding .}" TextColor="Black" VerticalOptions="Center" FontSize="Large" FontAttributes="Bold" Margin="20, 0" ></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

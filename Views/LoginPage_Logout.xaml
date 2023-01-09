@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IE307.N11.ViewModels"
+             x:Class="IE307.N11.Views.LoginPage_Logout"
+             Title="AnkiWeb account">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Logged in as" TextColor="Black" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="15"/>
+            <Label Text="admin" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="LOG OUT" FontSize="Large" TextColor="White" BackgroundColor="{StaticResource Primary}" Margin="15" Command="{Binding Cmd_LogOut}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -83,19 +83,19 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <BoxView Color="Gray"></BoxView>
-                <Image HeightRequest="200"/>
+                <Image Source="Flyout_Anki.png" HeightRequest="200"/>
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
     
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Shell.TabBarIsVisible="False">
         <ShellContent Route="Decks" Title="Decks" Icon="Flyout_Decks.png" ContentTemplate="{DataTemplate views:DecksPage}" />
         <ShellContent Route="CardBrowser" Title="Card browser" Icon="Flyout_CardBrowser.png" ContentTemplate="{DataTemplate views:DecksPage}" />
         <ShellContent Route="Statistics" Title="Statistics" Icon="Flyout_Statistics.png" ContentTemplate="{DataTemplate views:DecksPage}" />
     </FlyoutItem>
 
-    <MenuItem Text="Settings" IconImageSource="MenuItem_Settings.png" Clicked="MenuItem_About_Clicked"/>
-    <MenuItem Text="Help" IconImageSource="MenuItem_Help.png" />
-    <MenuItem Text="Support AnkiDroid" IconImageSource="MenuItem_SupportAnkiDroid.png"/>
+    <MenuItem Text="Settings" IconImageSource="MenuItem_Settings.png" Clicked="MenuItem_Settings_Clicked"/>
+    <MenuItem Text="Help" IconImageSource="MenuItem_Help.png" Clicked="MenuItem_Help_Clicked" />
+    <MenuItem Text="Support AnkiDroid" IconImageSource="MenuItem_SupportAnkiDroid.png" Clicked="MenuItem_Support_Clicked"/>
 
 </Shell>

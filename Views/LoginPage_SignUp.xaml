@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IE307.N11.ViewModels"
+             x:Class="IE307.N11.Views.LoginPage_SignUp"
+             Title="AnkiDroid - Account Register"
+             x:Name="SignUp">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Sign up" TextColor="Black" FontSize="Title" FontAttributes="Bold" Margin="10, 10"/>
+            <Label Text="Create a free account in under a minute." Margin="10, 5"/>
+            <Label Text="We will send you an email to confirm your address, so please ensure your email address is correct." Margin="10, 5"/>
+            <Grid Margin="10, 5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Your Email" VerticalOptions="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1" Placeholder="bob@example.com"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Email Again" VerticalOptions="Center"/>
+                <Entry Grid.Row="1" Grid.Column="1" Placeholder="bob@example.com"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="Password" VerticalOptions="Center"/>
+                <Entry Grid.Row="2" Grid.Column="1" IsPassword="True"/>
+            </Grid>
+            <Button Text="Sign up" Command="{Binding Cmd_SignUp_SignUp}" CommandParameter="{Binding Source={x:Reference SignUp}}" TextColor="White" BackgroundColor="{StaticResource Primary}" HorizontalOptions="Start" Margin="10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

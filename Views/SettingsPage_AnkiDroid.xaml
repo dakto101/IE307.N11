@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IE307.N11.ViewModels"
+             x:Class="IE307.N11.Views.SettingsPage_AnkiDroid"
+             Title="Settings AnkiDroid">
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Settings_AnkiDroid}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="0" Spacing="0">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Command}"/>
+                                    </StackLayout.GestureRecognizers>
+                                    <Label Text="{Binding Name}" TextColor="Black" VerticalOptions="Center" FontSize="Medium" Margin="20, 5, 0, 0" ></Label>
+                                    <Label Text="{Binding Description}" TextColor="Black" VerticalOptions="Center" FontSize="Small" Margin="20, 5, 0, 5" ></Label>
+                                </StackLayout>
+                                <StackLayout x:Name="StackLayout_AnkiDroid" Grid.Column="1" Grid.Row="0" Orientation="Vertical" Margin="0" Spacing="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                    
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

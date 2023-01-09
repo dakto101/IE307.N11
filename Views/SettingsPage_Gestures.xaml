@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IE307.N11.ViewModels"
+             x:Class="IE307.N11.Views.SettingsPage_Gestures"
+             Title="Reviewing">
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Settings_Gestures}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Margin="0" Spacing="0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Command}"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="{Binding Name}" TextColor="Black" VerticalOptions="Center" FontSize="Medium" Margin="20, 5, 0, 0" ></Label>
+                                <Label Text="{Binding Description}" TextColor="Black" VerticalOptions="Center" FontSize="Small" Margin="20, 5, 0, 5" ></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
